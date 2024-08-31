@@ -35,7 +35,10 @@ Include a cache in your API service as well so users are not fetching the same t
 ## Project setup
 
 ```bash
+# install dependencies
 $ npm ci
+# start
+$ npm run start
 ```
 
 ## Compile and run the project
