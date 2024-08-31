@@ -1,4 +1,5 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Query, UseInterceptors } from '@nestjs/common';
+import { CacheInterceptor } from '@nestjs/cache-manager';
 
 import { NewsService } from './news.service';
 import { Article } from 'src/modules/news/article.entity';
@@ -10,11 +11,13 @@ import { ApiTags } from '@nestjs/swagger';
 export class NewsController {
   constructor(private readonly service: NewsService) {}
 
+  @UseInterceptors(CacheInterceptor)
   @Get('batch')
   async batch(@Query() query: GetArticlesQueryDto): Promise<Article[]> {
     return this.service.getBatch(query);
   }
 
+  @UseInterceptors(CacheInterceptor)
   @Get('search')
   async search(@Query('title') title: string): Promise<Article[]> {
     return this.service.searchTop({
@@ -22,6 +25,7 @@ export class NewsController {
     });
   }
 
+  @UseInterceptors(CacheInterceptor)
   @Get('keyword')
   async keyword(@Query('keyword') keyword: string): Promise<Article[]> {
     return this.service.searchEverything({
