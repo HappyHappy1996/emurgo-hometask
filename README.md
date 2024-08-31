@@ -22,14 +22,20 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Project instructions
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Your task is to create a simple API that interacts with a public news API for fetching articles.
+
+For the back-end, you can use the language and framework of your choice.
+For example, you can use the [GNews API](https://gnews.io/) and then create your own API service, with documentation, that interacts with this API for fetching articles.
+
+Your API should have a few basic methods like, fetching N news articles, finding a news article with a specific title or author, and searching by keywords.
+Include a cache in your API service as well so users are not fetching the same things over and over.
 
 ## Project setup
 
 ```bash
-$ npm install
+$ npm ci
 ```
 
 ## Compile and run the project
@@ -44,6 +50,10 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+## Swagger
+The Swagger doc is available locally at (if you use default `.env` values):
+- http://localhost:3000/api
 
 ## Run tests
 
