@@ -32,14 +32,27 @@ For example, you can use the [GNews API](https://gnews.io/) and then create your
 Your API should have a few basic methods like, fetching N news articles, finding a news article with a specific title or author, and searching by keywords.
 Include a cache in your API service as well so users are not fetching the same things over and over.
 
+## Author comment
+
+The task is implemented with NestJS framework. For the news provider I chose [News API ](https://newsapi.org/)`
+
+The actual code is inside the `news` module, there are 3 endpoints and an in-memory cache with 10 seconds TTL.
+
+Also, you need to populate the `.env` file with `API_KEY` value.
+
 ## Project setup
 
 ```bash
 # install dependencies
 $ npm ci
+# make sure you have `API_KEY` set in `.env` file
 # start
 $ npm run start
 ```
+
+## Swagger
+The Swagger doc is available locally at (if you use default `.env` values):
+- http://localhost:3000/api
 
 ## Compile and run the project
 
@@ -53,10 +66,6 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
-
-## Swagger
-The Swagger doc is available locally at (if you use default `.env` values):
-- http://localhost:3000/api
 
 ## Run tests
 
